@@ -41,6 +41,7 @@
                 <div class="title">Laravel 5</div>
                 <div class="title">Dette er en test.</div>
                 <div class="title">Funker det?</div>
+                <div class="title">Fungerer dætta ammaaaa væ serruu</div>
             </div>
         </div>
     </body>
