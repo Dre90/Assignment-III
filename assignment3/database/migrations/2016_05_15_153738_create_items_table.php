@@ -18,12 +18,12 @@ class CreateItemsTable extends Migration
             $table->integer('category');
             $table->string('description');
             $table->string('itemImage');
-            $table->integer('userId', false, false);
+            $table->integer('user');
             $table->timestamp('createdDate');
             $table->boolean('givenAway');
 
             $table->foreign('category')->references('categoryId')->on('category');
-            $table->foreign('userId ')->references('userId ')->on('users');
+            $table->foreign('user')->references('userId')->on('users');
         });
     }
 
