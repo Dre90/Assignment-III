@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 class postTableSeeder extends Seeder {
 
     public function run()
@@ -9,12 +7,14 @@ class postTableSeeder extends Seeder {
         // Uncomment the below to wipe the table clean before populating
         DB::table('post')->delete();
 
-        $post = array(
-            ['postnr' => 2819, 'lastname' => 'Gjøvik'],
+
+        $posts = array(
+            ['postnr' => 2819, 'placeName' => 'Gjøvik'],
+            ['postnr' => 7810, 'placeName' => 'Namsos']
         );
 
         // Uncomment the below to run the seeder
-        DB::table('post')->insert($post);
+        DB::table('post')->insert($posts);
     }
 
 }

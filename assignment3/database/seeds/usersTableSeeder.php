@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 class userTableSeeder extends Seeder {
 
     public function run()
@@ -10,7 +8,8 @@ class userTableSeeder extends Seeder {
         DB::table('users')->delete();
 
         $users = array(
-            ['firstname' => 'Ola', 'lastname' => 'Norman', 'address' => 'Skolegata', 'postnr' => 2819, 'phonenumber' => 12345678, 'mail' => 'test@test.no', 'password' => 'password', 'userImage' => 'test.jpg'],
+            ['firstname' => 'Ola', 'lastname' => 'Norman', 'address' => 'Skolegata', 'postnr' => 2819, 'phonenumber' => 12345678, 'mail' => 'test@test.no', 'password' => Hash::make('password'), 'userImage' => 'test.jpg'],
+            ['firstname' => 'Kari', 'lastname' => 'Norman', 'address' => 'Parkveien', 'postnr' => 7810, 'phonenumber' => 87654321, 'mail' => 'test2@test.no', 'password' => Hash::make('password'), 'userImage' => 'test.jpg']
         );
 
         // Uncomment the below to run the seeder
