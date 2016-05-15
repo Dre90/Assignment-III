@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@frontpage');
+
+Route::get('loginReg', 'PagesController@loginReg');
