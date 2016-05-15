@@ -18,7 +18,12 @@ class CreateConversationsTable extends Migration
             $table->integer('itemId', false, false);
             $table->integer('convId', true)->unique();
 
-            $table->primary(array('fromUser', 'toUser', 'itemId'));
+            $table->unique(['fromUser', 'toUser', 'itemId']);
+            // $table->primary(['fromUser', 'toUser', 'itemId']);
+
+            $table->foreign('fromUser')->references('userId')->on('users');
+            $table->foreign('toUser')->references('userId')->on('users');
+            $table->foreign('itemId')->references('itemId')->on('items');
         });
     }
 

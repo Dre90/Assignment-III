@@ -22,7 +22,8 @@ class CreateItemsTable extends Migration
             $table->timestamp('createdDate');
             $table->boolean('givenAway');
 
-            // $table->primary('itemId');
+            $table->foreign('category')->references('categoryId')->on('category');
+            $table->foreign('userId ')->references('userId ')->on('users');
         });
     }
 

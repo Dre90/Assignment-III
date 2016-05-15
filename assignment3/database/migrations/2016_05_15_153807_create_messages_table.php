@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
             $table->text('text');
             $table->integer('convId', false, false);
 
-            // $table->primary('messagesId');
+            $table->foreign('convId')->references('convId')->on('conversations');
         });
     }
 

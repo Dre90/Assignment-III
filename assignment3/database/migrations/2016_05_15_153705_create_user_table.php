@@ -23,7 +23,7 @@ class CreateUserTable extends Migration
             $table->string('password');
             $table->string('userImage');
 
-            // $table->primary('userid');
+            $table->foreign('postnr')->references('postnr')->on('post');
         });
     }
 
