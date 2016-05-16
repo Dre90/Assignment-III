@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@frontpage');
+Route::get('/', 'ItemsController@index');
 Route::get('items', 'ItemsController@index');
 Route::get('items/{item}', 'ItemsController@show');
 
