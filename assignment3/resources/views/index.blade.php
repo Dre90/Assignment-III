@@ -6,7 +6,7 @@
 
 @section('content')
     <header>
-        <a href="index.php" class="logo">Online newspaper</a>
+        <a href="index.php" class="logo">Assignemt 3</a>
         <nav>
             <ul>
                 <li><a href="index.php">Front page</a></li>
@@ -15,5 +15,5 @@
             </ul>
         </nav>
     </header>
-    <h1>This is the frontpage</h1>
+
 @stop
