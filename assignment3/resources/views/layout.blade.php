@@ -13,21 +13,19 @@
     <body>
         <header>
            <?php if(isset($_SESSION['isloggedin'])) {
-             echo '<a href="index.php" class="logo">Online newspaper</a>
+             echo '<a href="items" class="logo">Online newspaper</a>
              <nav>
                  <ul>
-                     <li><a href="items/index">Front page</a></li>
+                     <li><a href="items">Front page</a></li>
                      <li><a href="loginReg">Add new item</a></li>
-                     <li><a href="login.php">Log in</a></li>
                  </ul>
              </nav>';
            } else {
-             echo '<a href="index.php" class="logo">Online newspaper</a>
+             echo '<a href="items" class="logo">Online newspaper</a>
              <nav>
                  <ul>
-                   <li><a href="items/index">Front page</a></li>
+                   <li><a href="items">Front page</a></li>
                    <li><a href="loginReg">Log in/Register</a></li>
-                   <li><a href="login.php">Log in</a></li>
                  </ul>
              </nav>';
            } ?>
