@@ -12,7 +12,25 @@
     </head>
     <body>
         <header>
-
+           <?php if(isset($_SESSION['isloggedin'])) {
+             echo '<a href="index.php" class="logo">Online newspaper</a>
+             <nav>
+                 <ul>
+                     <li><a href="index.php">Front page for logged in</a></li>
+                     <li><a href="register.php">Register</a></li>
+                     <li><a href="login.php">Log in</a></li>
+                 </ul>
+             </nav>';
+           } else {
+             echo '<a href="index.php" class="logo">Online newspaper</a>
+             <nav>
+                 <ul>
+                     <li><a href="index.php">Front page for not logged in</a></li>
+                     <li><a href="register.php">Register</a></li>
+                     <li><a href="login.php">Log in</a></li>
+                 </ul>
+             </nav>';
+           } ?>
         </header>
 
         @yield('content')
