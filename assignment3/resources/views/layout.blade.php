@@ -12,16 +12,26 @@
     </head>
     <body>
         <header>
-           <?php if(isset($_SESSION['isloggedin'])) {
-             echo '<a href="items" class="logo">Online newspaper</a>
+           <?php if(!isset($_SESSION['isloggedin'])) {
+             echo '<a href="items" class="logo">Assignment 3</a>
              <nav>
                  <ul>
                      <li><a href="items">Front page</a></li>
-                     <li><a href="loginReg">Add new item</a></li>
+                     <li><a href="items/create">Add new item</a></li>
+                     <li><a href="items/my_items">My Items</a></li>
+                     <li><a href="items/messages">Messages</a></li>
+                     <li class="dropdown">
+                         <a href="user" class="dropbtn">{{ $user->name }}</a>
+                         <div class="dropdown-content">
+                             <a href="user">Profile</a>
+                             <a href="items">Log Out</a>
+                         </div>
+                     </li>
+
                  </ul>
              </nav>';
            } else {
-             echo '<a href="items" class="logo">Online newspaper</a>
+             echo '<a href="items" class="logo">Assignment 3</a>
              <nav>
                  <ul>
                    <li><a href="items">Front page</a></li>
