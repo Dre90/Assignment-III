@@ -51,10 +51,10 @@ class DatabaseSeeder extends Seeder
         $this->command->info('Users table seeded!');
 
         DB::table('category')->insert($category);
-        $this->command->info('Post table seeded!');
+        $this->command->info('Category table seeded!');
 
         DB::table('items')->insert($items);
-        $this->command->info('Users table seeded!');
+        $this->command->info('Items table seeded!');
 
 
     }
