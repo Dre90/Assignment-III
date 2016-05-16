@@ -12,5 +12,7 @@
 */
 
 Route::get('/', 'PagesController@frontpage');
+Route::get('items', 'ItemsController@index');
+Route::get('items/{item}', 'ItemsController@show');
 
 Route::get('loginReg', 'PagesController@loginReg');

@@ -1,10 +1,10 @@
 @extends('layout')
 
 @section('title')
-    Log in/Register
+    {{ $items->title }}
 @stop
 
 @section('content')
-    <h1>This is the log in page</h1>
-    
+
+    <h1>{{ $items->title }}</h1>
 @stop

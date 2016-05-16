@@ -20,7 +20,7 @@ class CreatePostUsersCategorysItemsConversationsMessagesTables extends Migration
         });
 
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('userId', true);
+            $table->integer('Id', true);
             $table->string('firstName');
             $table->string('lastName');
             $table->string('address');
@@ -34,12 +34,12 @@ class CreatePostUsersCategorysItemsConversationsMessagesTables extends Migration
         });
 
         Schema::create('category', function (Blueprint $table) {
-            $table->integer('categoryId', true);
+            $table->integer('Id', true);
             $table->string('catName');
         });
 
         Schema::create('items', function (Blueprint $table) {
-            $table->integer('itemId', true);
+            $table->integer('Id', true);
             $table->string('title');
             $table->integer('category');
             $table->string('description');
@@ -48,21 +48,21 @@ class CreatePostUsersCategorysItemsConversationsMessagesTables extends Migration
             $table->timestamp('createdDate');
             $table->boolean('givenAway');
 
-            $table->foreign('category')->references('categoryId')->on('category');
-            $table->foreign('user')->references('userId')->on('users');
+            $table->foreign('category')->references('Id')->on('category');
+            $table->foreign('user')->references('Id')->on('users');
         });
 
         Schema::create('conversations', function (Blueprint $table) {
             $table->integer('fromUser', false, false);
             $table->integer('toUser', false, false);
             $table->integer('itemId', false, false);
-            $table->integer('convId', true)->unique();
+            $table->integer('Id', true)->unique();
 
             $table->unique(['fromUser', 'toUser', 'itemId']);
 
-            $table->foreign('fromUser')->references('userId')->on('users');
-            $table->foreign('toUser')->references('userId')->on('users');
-            $table->foreign('itemId')->references('itemId')->on('items');
+            $table->foreign('fromUser')->references('Id')->on('users');
+            $table->foreign('toUser')->references('Id')->on('users');
+            $table->foreign('itemId')->references('Id')->on('items');
         });
 
         Schema::create('messages', function (Blueprint $table) {
@@ -71,7 +71,7 @@ class CreatePostUsersCategorysItemsConversationsMessagesTables extends Migration
             $table->text('text');
             $table->integer('convId', false, false);
 
-            $table->foreign('convId')->references('convId')->on('conversations');
+            $table->foreign('convId')->references('Id')->on('conversations');
         });
     }
 
